@@ -1,0 +1,78 @@
+body {
+  background-color: #333;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 1em 2em;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.page-nav {
+  color: #ddd;
+}
+.page-nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header {
+  margin: 1em 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.header .blog-title .logo {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: sans-serif, cursive, LiSu;
+  text-decoration: none;
+}
+.header .menu {
+  margin: 0;
+  padding: 0;
+}
+.header .menu .menu-item {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+.header .menu .menu-item-link {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-decoration: none;
+}
+.header .menu .menu-item-link:hover {
+  color: #368ccb;
+}
+.post {
+  margin: 1.23em auto;
+  padding: 1em;
+  background-color: #fff;
+  color: #666;
+}
+.post .post-meta {
+  color: #aaa;
+  font-size: 0.8em;
+}
+.post .post-title {
+  margin-top: 0;
+  color: #000;
+}
+.posts .post:first-child {
+  margin-top: 0;
+}
+.posts .post-title {
+  font-size: 1.5em;
+}
+.posts .post-title .post-title-link {
+  color: #000;
+  text-decoration: none;
+}
+.posts .post-content a {
+  text-decoration: underline;
+}
+.posts .post-meta {
+  color: #aaa;
+}
