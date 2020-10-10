@@ -12,6 +12,7 @@ body {
   color: #fff;
   margin: 1em 0;
   font-weight: bold;
+  font-size: 1.2em;
 }
 .page-nav a {
   color: #aaa;
@@ -48,7 +49,7 @@ body {
   text-decoration: none;
 }
 .header .menu .menu-item-link:hover {
-  color: #368ccb;
+  font-weight: normal;
 }
 .post {
   margin: 1.23em auto;
@@ -79,4 +80,30 @@ body {
 }
 .posts .post-meta {
   color: #aaa;
+}
+.archive {
+  margin: 1em auto;
+  padding: 1em 0 0;
+}
+.archive .post-archive {
+  list-style: none;
+  padding: 0;
+}
+.archive .post-archive .post-item {
+  margin: 5px 0;
+}
+.archive .post-archive .post-item a {
+  color: #bbb;
+  text-decoration: none;
+}
+.archive .post-archive .post-item a:hover {
+  color: #eee;
+}
+.archive .post-archive .post-item .post-date {
+  display: inline-block;
+  margin-right: 10px;
+  color: #999;
+}
+.archive .post-archive .post-item .post-title {
+  color: #bbb;
 }
