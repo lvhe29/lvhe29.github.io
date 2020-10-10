@@ -2,19 +2,23 @@ body {
   background-color: #333;
   font-size: 1.25rem;
   line-height: 1.5;
-  margin: 1em 2em;
+  margin: 1em 1.23em;
 }
 .container {
   max-width: 960px;
   margin: 0 auto;
 }
 .page-nav {
-  color: #ddd;
+  color: #fff;
+  margin: 1em 0;
+  font-weight: bold;
 }
 .page-nav a {
-  color: #fff;
-  font-weight: bold;
+  color: #aaa;
   text-decoration: none;
+}
+.page-nav a:hover {
+  text-decoration: underline;
 }
 .header {
   margin: 1em 0;
