@@ -13,13 +13,14 @@ body {
   margin: 1em 0;
   font-weight: bold;
   font-size: 1.2em;
+  letter-spacing: 0.4em;
 }
 .page-nav a {
-  color: #aaa;
+  color: #999;
   text-decoration: none;
 }
 .page-nav a:hover {
-  color: #ddd;
+  color: #eee;
 }
 .header {
   margin: 1em 0;
@@ -52,10 +53,9 @@ body {
   font-weight: normal;
 }
 .post {
-  margin: 1.23em auto;
+  margin: 0 auto;
   padding: 1em;
   background-color: #fff;
-  color: #666;
 }
 .post .post-meta {
   color: #aaa;
@@ -63,27 +63,44 @@ body {
 }
 .post .post-title {
   margin-top: 0;
-  color: #000;
+  color: #555;
+  font-size: 1.2em;
 }
-.posts .post:first-child {
+.post .post-content a {
+  color: #888;
+  text-decoration: underline;
+}
+.post-list .posts {
+  margin: 1.23em auto;
+  padding: 1em;
+  background-color: #fff;
+}
+.post-list .posts:first-child {
   margin-top: 0;
 }
-.posts .post-title {
-  font-size: 1.5em;
+.post-list .posts-title {
+  font-size: 1.2em;
 }
-.posts .post-title .post-title-link {
+.post-list .posts-title .posts-title-link {
   color: #000;
   text-decoration: none;
 }
-.posts .post-content a {
+.post-list .posts-content {
+  color: #999;
+  font-weight: normal;
+  font-size: 1em;
+}
+.post-list .posts-content a {
+  color: #888;
   text-decoration: underline;
 }
-.posts .post-meta {
-  color: #aaa;
+.post-list .posts-meta {
+  color: #bbb;
+  font-size: 0.8em;
 }
 .archive {
   margin: 1em auto;
-  padding: 1em 0 0;
+  padding: 0em 0 0;
 }
 .archive .post-archive {
   list-style: none;

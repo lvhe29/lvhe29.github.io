@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>一夕研究所</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head>
+
+  <body>
+
+    <header class="header">
+
+  <div class="blog-title">
+    <a href="/" class="logo">一夕研究所</a>
+  </div>
+
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="/" class="menu-item-link">首页</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/archives" class="menu-item-link">归档</a>
+        </li>
+      
+    </ul>
+  </nav>
+  
+</header>
+
+    <main class="main">
+      
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<article class="post">
+
+  <div class="post-meta">
+    <span class="post-time">2019-11-01</span>
+  </div>
+
+  <div class="post-title">
+    <h1 class="post-title">样板空间和随机变量</h2>
+  </div>
+
+  <div class="post-content">
+    <h2><span id="随机试验-e">随机试验 $E$</span></h2><p>试验 E 是随机试验，则 E</p>
+<ul>
+<li>可以在相同的条件下重复的进行。</li>
+<li>每次试验的可能结果不止一个，并且能事先明确试验的所有可能结果。</li>
+<li>进行一次试验之前不能确定哪一个结果会出现。</li>
+</ul>
+<a id="more"></a>
+<p>相关：<a href="???">样本空间</a>、<a href="???">样本点</a></p>
+<hr>
+<h2><span id="样本空间-omega">样本空间 $\Omega$</span></h2><p><em>试验的结果的集合</em></p>
+<p>一个<a href="???">随机试验</a>的所有可能的基本结果的集合。</p>
+<p>相关：<a href="???">随机试验</a>、<a href="???">样本</a>、<a href="???">概率空间</a></p>
+<hr>
+<h2><span id="样本-omega">样本 $\omega$</span></h2><p><a href="???">随机试验</a>的结果</p>
+<hr>
+<h2><span id="事件域-mathcalf">事件域 $\mathcal{F}$</span></h2><p><em>样本空间上的一个 $\sigma$代数</em></p>
+<p>$\mathcal{F} \in 2^{\Omega}$</p>
+<ol>
+<li>$\emptyset \in \mathcal{F}$</li>
+<li>对补集运算封闭：$A \in \mathcal{F} \Rightarrow A^c \in \mathcal{F}$</li>
+<li>对可列个并集运算封闭：$A_n \in \mathcal{F}, n \in Z_+ \Rightarrow \bigcup_{n=1}^{\infty} A_n \in \mathcal{F}$</li>
+</ol>
+<hr>
+<h2><span id="概率-p">概率 $P$</span></h2><p><em>一种测度</em></p>
+<p>$P: \mathcal{F} \rightarrow R$</p>
+<ol>
+<li>非负性：$P(A) \geqslant 0$</li>
+<li>规范性：$P(\Omega) = 1$</li>
+<li>可列可加性：$\sum_{i=1}^{\infty} P(A_i) = P(\bigcup_{n=1}^{\infty}A_i)$</li>
+</ol>
+<hr>
+<h2><span id="概率空间-omega-mathcalf-p">概率空间 $(\Omega ,\mathcal{F}, P)$</span></h2><p><em>一种测度空间</em></p>
+<h5><span id="omega-是一个样本空间">$\Omega$ 是一个样本空间</span></h5><p>$\Omega = $ { $ \omega \ | \ \omega \ 是随机试验 \ E \ 的基本结果 $ }</p>
+<h5><span id="事件域-f-是-omega-上的一个-sigma代数-满足">事件域 $F$ 是 $\Omega$ 上的一个 $\sigma$代数, 满足：</span></h5><p>$\mathcal{F} \in 2^{\Omega}$</p>
+<ol>
+<li>$\emptyset \in \mathcal{F}$</li>
+<li>对补集运算封闭：$A \in \mathcal{F} \Rightarrow A^c \in \mathcal{F}$</li>
+<li>对可列个并集运算封闭：$A_n \in \mathcal{F}, n \in Z_+ \Rightarrow \bigcup_{n=1}^{\infty} A_n \in \mathcal{F}$</li>
+</ol>
+<h5><span id="概率-p-是一种测度-满足">概率 $P$ 是一种测度, 满足：</span></h5><p>$P: \mathcal{F} \rightarrow R$</p>
+<ol>
+<li>非负性：$P(A) \geqslant 0$</li>
+<li>规范性：$P(\Omega) = 1$</li>
+<li>可列可加性：$\sum_{i=1}^{\infty} P(A_i) = P(\bigcup_{n=1}^{\infty}A_i)$</li>
+</ol>
+<hr>
+<h2><span id="随机变量-x">随机变量 $X$</span></h2><p><em>一种可测函数</em></p>
+<p>$X: \Omega \rightarrow R$</p>
+
+  </div>
+
+</article>
+    </main>
+    
+  </body>
+
+</html>
