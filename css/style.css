@@ -70,31 +70,31 @@ body {
   color: #888;
   text-decoration: underline;
 }
-.post-list .posts {
+.postlist .posts {
   margin: 1.23em auto;
   padding: 1em;
   background-color: #fff;
 }
-.post-list .posts:first-child {
+.postlist .posts .posts:first-child {
   margin-top: 0;
 }
-.post-list .posts-title {
+.postlist .posts .posts-title {
   font-size: 1.2em;
 }
-.post-list .posts-title .posts-title-link {
+.postlist .posts .posts-title .posts-title-link {
   color: #000;
   text-decoration: none;
 }
-.post-list .posts-content {
+.postlist .posts .posts-content {
   color: #999;
   font-weight: normal;
   font-size: 1em;
 }
-.post-list .posts-content a {
+.postlist .posts .posts-content a {
   color: #888;
   text-decoration: underline;
 }
-.post-list .posts-meta {
+.postlist .posts .posts-meta {
   color: #bbb;
   font-size: 0.8em;
 }
