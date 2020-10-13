@@ -1,5 +1,6 @@
 body {
   background-color: #333;
+  font-family: sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 1em 1.23em;
@@ -45,7 +46,7 @@ body {
 .header .blog-title .logo {
   color: #fff;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 700;
   font-family: sans-serif, cursive, LiSu;
   text-decoration: none;
 }
@@ -60,11 +61,11 @@ body {
 .header .menu .menu-item-link {
   color: #fff;
   font-size: 1.5em;
-  font-weight: lighter;
+  font-weight: 300;
   text-decoration: none;
 }
 .header .menu .menu-item-link:hover {
-  font-weight: normal;
+  font-weight: 500;
 }
 .post {
   margin: 0 auto;
