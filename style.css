@@ -1,0 +1,98 @@
+:root {
+  --gap-width: 24px;
+  --card-base-width: 300px;
+  --card-main-width: min(
+    calc(100vw - 2 * var(--gap-width)),
+    var(--card-base-width)
+  );
+  --card-font-size: max(20px, calc(var(--card-main-width) / 10));
+}
+
+:root {
+  --color-main-bg: #555;
+  --color-link: #559;
+}
+
+body {
+  margin: 0;
+  padding: 0em;
+  background: var(--color-main-bg);
+  /* background: linear-gradient(#eee, #dde); */
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover span{
+  text-decoration: underline;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: left;
+  width: min-content;
+  /* max-width: calc(3 * var(--card-main-width) + 4 * var(--gap-width) + 1px); */
+  padding: calc(var(--gap-width) / 2);
+}
+
+.card {
+  box-sizing: border-box;
+  width: var(--card-main-width);
+  height: var(--card-main-width);
+  flex-basis: var(--card-main-width);
+  flex-shrink: 0;
+  margin: calc(var(--gap-width) / 2);
+  color: #333;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 2px;
+  overflow: scroll;
+
+
+  font-size: var(--card-font-size);
+  font-weight: bold;
+  line-height: var(--card-font-size);
+
+  color: #333;
+  background-color: #ddd;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 8px #ffa4;
+}
+
+.card-title {
+  color: #eee;
+  background-color: #333;
+}
+
+.card-app {
+  color: var(--color-link);
+  background: linear-gradient(#eee, #dde);
+}
+
+.card-page {
+  color: var(--color-link);
+  background: linear-gradient(#ddd, #ede);
+}
+
+.card-b {
+  color: #444;
+  background-color: #ccc;
+}
+
+.row {
+  width: 100%;
+}
