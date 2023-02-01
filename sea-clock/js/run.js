@@ -25,6 +25,14 @@ function onIslandCloseBtnClick(e) {
   dateDialog.hidden = true;
 }
 
+function closeMask() {
+  var mask = document.getElementById('loading-mask');
+  mask.classList.add('fade-out');
+  setTimeout(function () {
+    mask.hidden = true;
+  }, 3 * 1000);
+}
+
 window.onload = function () {
   document.body.onclick = onBodyClick;
   var island = document.getElementById('clockIsland');
@@ -35,4 +43,5 @@ window.onload = function () {
   // var rain = new RainyDay({
   //   image: document.body,
   // });
+  closeMask();
 };
