@@ -15,9 +15,9 @@ function digiClock(time = new Date()) {
   }
   var year = time.getFullYear();
   var mon = time.getMonth() + 1;
-  mon = num2two(mon);
+  // mon = num2two(mon);
   var date = time.getDate();
-  date = num2two(date);
+  // date = num2two(date);
   var hh = time.getHours();
   hh = num2two(hh);
   var mm = time.getMinutes();
@@ -32,7 +32,7 @@ function digiClock(time = new Date()) {
   }
 
   var newClockDate =
-    '<span>' + year + '-' + mon + '-' + date + '</span>';
+    '<span>' + year + '. ' + mon + '. ' + date + '</span>';
 
   if (newClockDate !== clockDateCached) {
     document.getElementById('myclockDate').innerHTML = newClockDate;

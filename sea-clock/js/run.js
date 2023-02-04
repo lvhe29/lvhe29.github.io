@@ -1,3 +1,5 @@
+var fadeOutTime = 10 * 1000 + 50;
+
 function main() {
   var time = new Date();
   digiClock(time);
@@ -7,8 +9,11 @@ function main() {
 
 function onBodyClick(e) {
   var clock = document.getElementById('myclock');
-  if (e.target !== document.body) return;
-  clock.hidden = !clock.hidden;
+  if (e.target !== document.body || clock.hidden === false) return;
+  clock.hidden = false;
+  setTimeout(function () {
+    clock.hidden = true;
+  }, fadeOutTime);
 }
 
 function onIslandClick(e) {
@@ -17,7 +22,7 @@ function onIslandClick(e) {
   dateDialog.hidden = false;
   setTimeout(() => {
     dateDialog.hidden = true;
-  }, 10 * 1000);
+  }, fadeOutTime);
 }
 
 function onIslandCloseBtnClick(e) {
@@ -30,7 +35,7 @@ function closeMask() {
   mask.classList.add('fade-out');
   setTimeout(function () {
     mask.hidden = true;
-  }, 3 * 1000);
+  }, 1000 + 50);
 }
 
 window.onload = function () {

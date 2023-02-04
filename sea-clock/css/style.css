@@ -50,6 +50,7 @@ body {
   z-index: 10;
 
   vertical-align: top;
+  animation: 10s linear forwards fadeOutSlow;
 }
 
 #clockSun img {
@@ -166,25 +167,15 @@ body {
 }
 
 #islandDate {
-  padding: 1em;
-
-  font-family: monospace;
+  font-family: sans-serif;
   position: fixed;
   z-index: 19;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0.6em);
 
-  background: #cfcfcf;
-
-  border-style: solid;
-  border-radius: 4px;
-  border-color: #575757;
-  border-width: 1px;
-
-  box-shadow: 0pt 0pt 6pt #888888;
-
-  /* line-height: 20%; */
+  color: #fff6;
+  animation: 10s linear forwards fadeOutSlow;
 }
 
 #islandDate:target {
@@ -206,15 +197,30 @@ body {
 }
 
 .fade-out {
-  animation: 1s linear forwards mask;
+  animation: 1s linear forwards fadeOut;
 }
 
-@keyframes mask {
+@keyframes fadeOut {
   from {
     opacity: 1;
   }
 
   to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeOutSlow {
+  0% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
     opacity: 0;
   }
 }
