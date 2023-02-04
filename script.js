@@ -27,4 +27,4 @@ function onload() {
   randomMoveCards(cards);
 }
 
-document.addEventListener('DOMContentLoaded', onload);
+// document.addEventListener('DOMContentLoaded', onload);

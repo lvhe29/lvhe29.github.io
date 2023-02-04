@@ -1,10 +1,12 @@
 :root {
   --gap-width: 24px;
   --card-base-width: 300px;
+  --card-ratio: 1;
   --card-main-width: min(
     calc(100vw - 2 * var(--gap-width)),
     var(--card-base-width)
   );
+  --card-main-height: calc(var(--card-ratio) * var(--card-main-width));
   --card-font-size: max(20px, calc(var(--card-main-width) / 10));
 }
 
@@ -15,7 +17,7 @@
 
 body {
   margin: 0;
-  padding: 0em;
+  padding: var(--gap-width);
   background: var(--color-main-bg);
   /* background: linear-gradient(#eee, #dde); */
 }
@@ -51,42 +53,47 @@ a {
 .card {
   box-sizing: border-box;
   width: var(--card-main-width);
-  height: var(--card-main-width);
+  height: var(--card-main-height);
   flex-basis: var(--card-main-width);
   flex-shrink: 0;
-  margin: calc(var(--gap-width) / 2);
+  /* margin: calc(var(--gap-width) / 2); */
+  margin: -2px 0 0 -2px;
   color: #333;
-  background-color: #fff;
-  padding: 12px;
-  border-radius: 2px;
+  padding: 0.2em;
+  /* border-radius: 2px; */
   overflow: scroll;
 
   font-size: var(--card-font-size);
   font-weight: bold;
-  line-height: var(--card-font-size);
+  /* line-height: var(--card-font-size); */
 
-  color: #333;
+  border: 2px solid #222;
   background-color: #ddd;
   position: relative;
+  transform: translate(1px, 1px)
 }
 
 .card-bg-img {
   position: absolute;
   left: 0;
   top: 0;
-  /* width: 100%; */
+  /* bottom: 0; */
+  width: 100%;
+  /* height: var(--card-main-width); */
   height: 100%;
   z-index: -1;
+  background: #ccc;
+  /* border-top: 2px solid #222; */
 }
 
-.card-bg-img:hover {
+/* .card-bg-img:hover {
   opacity: 0.3;
   filter: blur(5px);
-}
+} */
 
-.card:hover {
+/* .card:hover {
   box-shadow: 0 0 0 8px #ffa4;
-}
+} */
 
 .card-title {
   color: #eee;
@@ -95,15 +102,30 @@ a {
 
 .card-app {
   color: var(--color-link);
-  background: linear-gradient(#eee, #dde);
+  /* background: linear-gradient(#eee, #dde); */
+  background: #fff;
 }
 
-.card-app span {
-  display: none;
+.card-app:hover {
+  /* border-color: #885; */
+  z-index: 100;
 }
 
-.card-app:hover span {
+/* .card-app:hover .card-bg-img {
+  border-color: #885;
+} */
+
+.card-app .title {
   display: block;
+  /* padding: 0 0.2em; */
+  background: #fff;
+  animation: 10s infinite blink;
+}
+
+.card-app:hover .title {
+  animation: none;
+  opacity: 0.95;
+  background: #ffe;
 }
 
 .card-b {
@@ -124,4 +146,19 @@ a {
 
 .type {
   color: #0005;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
