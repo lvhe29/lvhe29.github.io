@@ -1,4 +1,3 @@
-console.log(111);
 
 function random(seed) {
   if (!seed) return Math.random();
@@ -22,9 +21,31 @@ function randomMoveCards(cards) {
   });
 }
 
-function onload() {
-  const cards = document.querySelectorAll('.card');
-  randomMoveCards(cards);
+function randomMoveTitle(title) {
+  title.forEach((e, i) => {
+    var moveY = random();
+    var top = 'calc(' + moveY.toFixed(2) + ' * (100% - ' + e.clientHeight + 'px))';
+    e.style.paddingTop = top;
+  });
 }
 
-// document.addEventListener('DOMContentLoaded', onload);
+function onload() {
+  // const cards = document.querySelectorAll('.card');
+  // randomMoveCards(cards);
+  var title = document.querySelectorAll("#card-title > div")
+  randomMoveTitle(title)
+}
+
+var resizeTimer = null;
+function onResize() {
+  if (resizeTimer !== null) return;
+  var title = document.querySelectorAll("#card-title > div")
+  randomMoveTitle(title)
+  resizeTimer = setTimeout(function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = null;
+  }, 300);
+}
+
+document.addEventListener('DOMContentLoaded', onload);
+window.onresize = onResize;

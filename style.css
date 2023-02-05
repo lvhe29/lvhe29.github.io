@@ -17,7 +17,6 @@
 
 body {
   margin: 0;
-  padding: var(--gap-width);
   background: var(--color-main-bg);
   /* background: linear-gradient(#eee, #dde); */
 }
@@ -47,7 +46,12 @@ a {
   justify-content: center;
   /* width: min-content; */
   max-width: calc(3 * var(--card-main-width) + 4 * var(--gap-width) + 1px);
-  padding: calc(var(--gap-width) / 2);
+  /* padding: max(
+      calc(2 * var(--gap-width)),
+      calc(48vh - 0.5 * var(--card-main-height))
+    )
+    var(--gap-width); */
+  padding: calc(1.6 * var(--gap-width)) var(--gap-width);
 }
 
 .card {
@@ -70,7 +74,7 @@ a {
   border: 2px solid #222;
   background-color: #ddd;
   position: relative;
-  transform: translate(1px, 1px)
+  transform: translate(1px, 1px);
 }
 
 .card-bg-img {
@@ -95,9 +99,19 @@ a {
   box-shadow: 0 0 0 8px #ffa4;
 } */
 
-.card-title {
-  color: #eee;
+#card-title {
+  color: #fff9;
   background-color: #333;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  font-size: calc(var(--card-main-width) / (7 + 2));
+}
+
+#card-title div {
+  height: min-content;
 }
 
 .card-app {
