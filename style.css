@@ -108,6 +108,7 @@ a {
   justify-content: space-evenly;
   /* align-items: center; */
   font-size: calc(var(--card-main-width) / (7 + 2));
+  overflow: hidden;
 }
 
 #card-title div {
