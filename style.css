@@ -15,6 +15,10 @@
   --color-link: #559;
 }
 
+* {
+  font-family: sans-serif;
+}
+
 body {
   margin: 0;
   background: var(--color-main-bg);
