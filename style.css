@@ -1,4 +1,5 @@
 :root {
+  --base-z: 1000;
   --gap-width: 24px;
   --card-base-width: 300px;
   --card-ratio: 1;
@@ -44,16 +45,15 @@ a {
   justify-content: left;
   justify-content: center;
   max-width: calc(3 * var(--card-main-width) + 4 * var(--gap-width) + 1px);
-  padding: calc(1.6 * var(--gap-width)) var(--gap-width);
+  padding: 0 var(--gap-width) calc(1.6 * var(--gap-width));
 }
 
 .card {
-  box-sizing: border-box;
   width: var(--card-main-width);
   height: var(--card-main-height);
   flex-basis: var(--card-main-width);
   flex-shrink: 0;
-  margin: -2px 0 0 -2px;
+  margin: -100px 0 0 -2px;
   color: #333;
   overflow: hidden;
 
@@ -61,9 +61,10 @@ a {
   font-weight: bold;
 
   border: 2px solid #222;
+  border-top-width: 100px;
   background-color: #ddd;
   position: relative;
-  transform: translate(1px, 1px);
+  transform: translate(1px, 25px);
 }
 
 .card-bg-img {
@@ -72,13 +73,13 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
   background: #ccc;
 }
 
 #card-title {
-  color: #fff9;
-  background-color: #333;
+  color: #fffb;
+  background-color: #777;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -99,8 +100,11 @@ a {
 .card-app .title {
   display: block;
   margin: 0.2em;
+  width: calc(100% - 0.4em);
   background: #fff;
   animation: 10s infinite blink;
+  position: absolute;
+  z-index: 2;
 }
 
 .card-app:hover .title {
