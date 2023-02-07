@@ -18,17 +18,12 @@
 body {
   margin: 0;
   background: var(--color-main-bg);
-  /* background: linear-gradient(#eee, #dde); */
 }
 
 a {
   color: var(--color-link);
   text-decoration: none;
 }
-
-/* a:hover span {
-  text-decoration: underline;
-} */
 
 #root {
   display: flex;
@@ -44,13 +39,7 @@ a {
   box-sizing: border-box;
   justify-content: left;
   justify-content: center;
-  /* width: min-content; */
   max-width: calc(3 * var(--card-main-width) + 4 * var(--gap-width) + 1px);
-  /* padding: max(
-      calc(2 * var(--gap-width)),
-      calc(48vh - 0.5 * var(--card-main-height))
-    )
-    var(--gap-width); */
   padding: calc(1.6 * var(--gap-width)) var(--gap-width);
 }
 
@@ -60,16 +49,12 @@ a {
   height: var(--card-main-height);
   flex-basis: var(--card-main-width);
   flex-shrink: 0;
-  /* margin: calc(var(--gap-width) / 2); */
   margin: -2px 0 0 -2px;
   color: #333;
-  padding: 0.2em;
-  /* border-radius: 2px; */
-  overflow: scroll;
+  overflow: hidden;
 
   font-size: var(--card-font-size);
   font-weight: bold;
-  /* line-height: var(--card-font-size); */
 
   border: 2px solid #222;
   background-color: #ddd;
@@ -81,23 +66,11 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  /* bottom: 0; */
   width: 100%;
-  /* height: var(--card-main-width); */
   height: 100%;
   z-index: -1;
   background: #ccc;
-  /* border-top: 2px solid #222; */
 }
-
-/* .card-bg-img:hover {
-  opacity: 0.3;
-  filter: blur(5px);
-} */
-
-/* .card:hover {
-  box-shadow: 0 0 0 8px #ffa4;
-} */
 
 #card-title {
   color: #fff9;
@@ -106,7 +79,6 @@ a {
   display: flex;
   justify-content: space-between;
   justify-content: space-evenly;
-  /* align-items: center; */
   font-size: calc(var(--card-main-width) / (7 + 2));
   overflow: hidden;
 }
@@ -117,22 +89,12 @@ a {
 
 .card-app {
   color: var(--color-link);
-  /* background: linear-gradient(#eee, #dde); */
   background: #fff;
 }
 
-.card-app:hover {
-  /* border-color: #885; */
-  z-index: 100;
-}
-
-/* .card-app:hover .card-bg-img {
-  border-color: #885;
-} */
-
 .card-app .title {
   display: block;
-  /* padding: 0 0.2em; */
+  margin: 0.2em;
   background: #fff;
   animation: 10s infinite blink;
 }
@@ -143,24 +105,12 @@ a {
   background: #ffe;
 }
 
-.card-b {
-  color: #444;
-  background-color: #ccc;
-}
-
 .card-tail {
   opacity: 0;
   height: 0;
   padding: 0;
   border-top: none;
   border-bottom: none;
-}
-
-.card-tail:hover {
-  box-shadow: none;
-}
-.row {
-  width: 100%;
 }
 
 .type {
