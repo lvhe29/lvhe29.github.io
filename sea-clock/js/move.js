@@ -15,10 +15,10 @@ function moves(time1 = new Date()) {
   var t = 0;
   //var t0 = (ss1 + ms1 / 1000) / 60;
   var t0 = (-6 + hh1 + (mm1 + ss1 / 60) / 60) / 24;
-  var isInDay = t0 < 0.5;
   if (t0 < 0) {
     t0 = t0 + 1;
   }
+  var isInDay = t0 < 0.5;
 
   if (isInDay) {
     t = 2 * t0;
