@@ -35,24 +35,24 @@ function onload() {
   // randomMoveCards(cards);
   var title = document.querySelectorAll('#card-title > div');
   randomMoveTitle(title);
-  randomTitleWidthTimer();
+  // randomTitleWidthTimer();
 }
 
-var randomTitleTimer = null;
-var randomTitleLoopTimer = null;
-function randomTitleWidthTimer() {
-  if (randomTitleTimer !== null) return;
-  var title = document.querySelectorAll('#card-title > div');
-  randomTitleTimer = setTimeout(function () {
-    clearTimeout(randomTitleTimer);
-    randomTitleTimer = null;
-  }, 300);
-  randomMoveTitle(title);
-  clearTimeout(randomTitleLoopTimer);
-  randomTitleLoopTimer = setTimeout(function () {
-    randomTitleWidthTimer();
-  }, 5000);
-}
+// var randomTitleTimer = null;
+// var randomTitleLoopTimer = null;
+// function randomTitleWidthTimer() {
+//   if (randomTitleTimer !== null) return;
+//   var title = document.querySelectorAll('#card-title > div');
+//   randomTitleTimer = setTimeout(function () {
+//     clearTimeout(randomTitleTimer);
+//     randomTitleTimer = null;
+//   }, 300);
+//   randomMoveTitle(title);
+//   clearTimeout(randomTitleLoopTimer);
+//   randomTitleLoopTimer = setTimeout(function () {
+//     randomTitleWidthTimer();
+//   }, 5000);
+// }
 
 document.addEventListener('DOMContentLoaded', onload);
-window.onresize = randomTitleWidthTimer;
+// window.onresize = randomTitleWidthTimer;
