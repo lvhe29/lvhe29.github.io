@@ -16,6 +16,10 @@ self.addEventListener('install', function (event) {
         './img/moon.png',
         './img/sun.png',
         './img/pageicon.ico',
+        './fonts/cursedtimerulil-aznm-webfont.eot',
+        './fonts/cursedtimerulil-aznm-webfont.ttf',
+        './fonts/cursedtimerulil-aznm-webfont.woff',
+        './fonts/cursedtimerulil-aznm-webfont.woff2',
       ]);
     })
   );
