@@ -40,8 +40,8 @@ function digiClock(time = new Date()) {
   }
 
   if (hh < 6 || hh >= 18) {
-    document.body.style.backgroundImage = 'url(img/sea_02_204.jpg)';
+    document.body.style.backgroundImage = 'url(img/sea_bg_night.jpg)';
   } else {
-    document.body.style.backgroundImage = 'url(img/sea_02_101.jpg)';
+    document.body.style.backgroundImage = 'url(img/sea_bg_day.jpg)';
   }
 }

@@ -50,3 +50,17 @@ window.onload = function () {
   // });
   closeMask();
 };
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('./sw.js', { scope: '.' })
+    .then(function (registration) {
+      console.log(
+        '[SW] registration successful with scope: ',
+        registration.scope
+      );
+    })
+    .catch(function (err) {
+      console.error('[SW] registration failed: ', err);
+    });
+}
