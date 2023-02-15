@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "comments": false,
+  "plugins": [
+    // 支持 Class 属性
+    "@babel/plugin-proposal-class-properties",
+    // 支持解构赋值
+    "@babel/plugin-proposal-object-rest-spread",
+    // 转译箭头函数
+    "@babel/plugin-transform-arrow-functions"
+  ]
+}
