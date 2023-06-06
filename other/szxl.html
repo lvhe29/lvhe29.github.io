@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#ffffff" />
   <title>手指训练</title>
 
   <style>
@@ -38,60 +38,44 @@
       display: flex;
       flex-direction: row;
       padding: 8px;
-      /* box-shadow: 0 1px 6px #0005; */
-      border: solid 2px #0006;
       align-items: center;
-      height: 72px;
+      height: 76px;
+      line-height: 76px;
     }
 
     .right-card {
-      background-color: #eef;
-      margin-left: 60px;
-      border-radius: 56px 40px 40px 8px;
       margin-top: 8px;
+      margin-left: 64px;
+      background: linear-gradient(to left, #e3e3f3, #e3e3f3 40%, #fff0);
     }
 
     .left-card {
       margin-top: 16px;
-      background-color: #ffd;
-      margin-right: 60px;
-      border-radius: 40px 8px 56px 40px;
+      margin-right: 64px;
+      background: linear-gradient(to right, #f3f3c2, #f3f3c2 40%, #fff0);
     }
 
     .card .number {
       text-align: center;
       flex-grow: 1;
-      font-size: 48px;
+      font-size: 64px;
       font-weight: bold;
       color: #000d;
-    }
-
-    .blink-animation {
-      animation: numKeyframes 0.2s;
-    }
-
-    @keyframes numKeyframes {
-      0% {
-        opacity: 0.8;
-      }
-
-      100% {
-        opacity: 1;
-      }
     }
 
     .card .label {
       text-align: center;
       flex-grow: 0;
-      font-size: 16;
-      color: #0007;
+      font-size: 16px;
+      line-height: 20px;
+      color: #0009;
       font-weight: bold;
       width: 40px;
     }
 
     .line {
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
     }
 
     .setting {
@@ -102,6 +86,7 @@
       font-size: 16px;
       color: #444;
       margin-bottom: 8px;
+      padding-left: 4px;
     }
 
     .setting button {
@@ -118,6 +103,7 @@
       padding-right: 8px;
       font-weight: normal;
       opacity: 0.9;
+      cursor: pointer;
     }
 
     .setting button:disabled {
@@ -125,6 +111,11 @@
       font-weight: bold;
       border-color: #0007;
       box-shadow: 0 0 0 4px #e2d6d6;
+    }
+
+    .buttons {
+      user-select: none;
+      padding-left: 4px;
     }
 
     .space {
@@ -153,8 +144,8 @@
       <div class="setting">
         <div class="title">单手还是双手</div>
         <div class="buttons">
-          <button class="danshou">单手</button>
-          <button class="shuangshou">双手</button>
+          <button type="button" class="danshou">单手</button>
+          <button type="button" class="shuangshou">双手</button>
         </div>
       </div>
     </div>
@@ -162,9 +153,9 @@
       <div class="setting">
         <div class="title">速度</div>
         <div class="buttons">
-          <button class="speed1">慢</button>
-          <button class="speed2">中</button>
-          <button class="speed3">快</button>
+          <button type="button" class="speed1">慢</button>
+          <button type="button" class="speed2">中</button>
+          <button type="button" class="speed3">快</button>
         </div>
       </div>
     </div>
@@ -172,10 +163,10 @@
       <div class="setting">
         <div class="title">动几个手指</div>
         <div class="buttons">
-          <button class="finger1">单指</button>
-          <button class="finger2">两指</button>
-          <button class="finger3">三指</button>
-          <button class="finger-random">随机</button>
+          <button type="button" class="finger1">单指</button>
+          <button type="button" class="finger2">两指</button>
+          <button type="button" class="finger3">三指</button>
+          <button type="button" class="finger-random">随机</button>
         </div>
       </div>
     </div>
@@ -184,7 +175,7 @@
   <script>
     var mainTimer = null;
     var fingerNum = 5;
-    var speeds = [5, 3, 1];
+    var speeds = [5, 3, 1.3];
     var states = {
       isSingleHand: true,
       speed: speeds[1],
@@ -200,8 +191,15 @@
     }
     function shuffleArray(array) {
       var _array = array.slice();
-      return _array.sort(function () { return Math.random() - 0.5 });
+      for (var i = _array.length - 1; i > 0; i--) {
+        var randomIndex = Math.floor(Math.random() * (i + 1));
+        var temporaryValue = _array[i];
+        _array[i] = _array[randomIndex];
+        _array[randomIndex] = temporaryValue;
+      }
+      return _array;
     }
+
     function getNNums(n) {
       return Array(n).fill(0).map(function (_, i) { return i + 1 })
     }
@@ -234,19 +232,6 @@
       var sorted2 = nums.slice(1, l + 1).sort();
       return isSameArray(shouldNotBe, sorted1) ? sorted2 : sorted1;
     }
-    function restartAnimation(elements, animationClassName) {
-      elements.forEach(
-        function (e) {
-          e.classList.remove(animationClassName);
-        }
-      )
-      void elements[0].offsetWidth;
-      elements.forEach(
-        function (e) {
-          e.classList.add(animationClassName);
-        }
-      )
-    }
 
     var buttons = {
       isSingle: ['danshou', 'shuangshou',],
@@ -275,8 +260,17 @@
       // 更新数字
       rightNumEle.innerHTML = leftString;
       leftNumEle.innerHTML = rightString;
-      restartAnimation([rightNumEle, leftNumEle], 'blink-animation')
+    }
+    function renderWithTimer() {
+      render()
+      mainTimer = setInterval(render, 1000 * states.speed);
+    }
+    function restart() {
+      mainTimer && clearInterval(mainTimer);
+      renderWithTimer();
+    }
 
+    function renderButtons() {
       // 更新按钮状态
       buttonEles['danshou'].disabled = states.isSingleHand;
       buttonEles['shuangshou'].disabled = !states.isSingleHand;
@@ -288,65 +282,67 @@
       buttonEles['finger3'].disabled = states.leftNumber === 3;
       buttonEles['finger-random'].disabled = !states.leftNumber;
     }
-    function renderWithTimer() {
-      render()
-      mainTimer = setInterval(render, 1000 * states.speed);
-    }
-    function restart() {
-      mainTimer && clearInterval(mainTimer);
-      renderWithTimer();
-    }
 
     // 单手
     buttonEles['danshou'].onclick = function () {
       states.isSingleHand = true;
       restart();
+      renderButtons();
     };
     // 双手
     buttonEles['shuangshou'].onclick = function () {
       states.isSingleHand = false;
       restart();
+      renderButtons();
     };
     // 慢速
     buttonEles['speed1'].onclick = function () {
       setSpeed(0);
       restart();
+      renderButtons();
     };
     // 中速
     buttonEles['speed2'].onclick = function () {
       setSpeed(1);
       restart();
+      renderButtons();
     };
     // 快速
     buttonEles['speed3'].onclick = function () {
       setSpeed(2);
       restart();
+      renderButtons();
     };
     // 单指
     buttonEles['finger1'].onclick = function () {
       states.leftNumber = 1;
       states.rightMunber = 1;
       restart();
+      renderButtons();
     };
     // 两指
     buttonEles['finger2'].onclick = function () {
       states.leftNumber = 2;
       states.rightMunber = 2;
       restart();
+      renderButtons();
     };
     // 三指
     buttonEles['finger3'].onclick = function () {
       states.leftNumber = 3;
       states.rightMunber = 3;
       restart();
+      renderButtons();
     };
     // 随机
     buttonEles['finger-random'].onclick = function () {
       states.leftNumber = null;
       states.rightMunber = null;
       restart();
+      renderButtons();
     };
 
+    renderButtons();
     renderWithTimer();
   </script>
 </body>
