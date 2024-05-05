@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "buildjs": "npx babel script.js | npx uglifyjs -c -m -o script.min.js"
+    "buildjs": "npx babel ../script.js | npx uglifyjs -c -m -o ../script.min.js"
   },
   "keywords": [],
   "author": "",
